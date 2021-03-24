@@ -1,11 +1,43 @@
 {
-  "devDependencies": {
-    "@types/node": "^14.14.35",
-    "@types/vscode": "^1.54.0",
-    "prettier": "^2.2.1",
-    "ts-loader": "^8.0.18",
-    "typescript": "^4.2.3",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.5.0"
-  }
+	"author": {
+		"name": "JK",
+		"email": "u.sslooky@gmail.com"
+	},
+	"name": "cruise",
+	"displayName": "Cruise",
+	"description": "A VSCode extension that allows you to easily expose ports and more using Localtunnel.",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JammSpread/cruise.git"
+	},
+	"icon": "",
+	"publisher": "undefined",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"vscode",
+		"localtunnel",
+		"lt",
+		"port",
+		"expose"
+	],
+	"activationEvents": [],
+	"main": "./dist/extension.js",
+	"contributes": {},
+	"scripts": {},
+	"dependencies": {},
+	"devDependencies": {
+		"@types/node": "^14.14.35",
+		"@types/vscode": "^1.54.0",
+		"prettier": "^2.2.1",
+		"ts-loader": "^8.0.18",
+		"typescript": "^4.2.3",
+		"webpack": "^5.28.0",
+		"webpack-cli": "^4.5.0"
+	}
 }
