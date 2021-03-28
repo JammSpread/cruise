@@ -56,7 +56,9 @@
 		"format": "./format.sh",
 		"package": "vsce package"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"localtunnel": "^2.0.1"
+	},
 	"devDependencies": {
 		"@types/node": "^14.14.35",
 		"@types/vscode": "^1.54.0",
