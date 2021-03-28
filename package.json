@@ -26,9 +26,29 @@
 		"port",
 		"expose"
 	],
-	"activationEvents": [],
+	"activationEvents": [
+		"onStartupFinished"
+	],
 	"main": "./dist/extension.js",
-	"contributes": {},
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "cruise",
+					"title": "Cruise",
+					"icon": "media/menu.svg"
+				}
+			]
+		},
+		"views": {
+			"cruise": [
+				{
+					"id": "cruise.ports",
+					"name": "Ports"
+				}
+			]
+		}
+	},
 	"scripts": {
 		"vscode:prepublish": "yarn format && webpack --mode production",
 		"compile": "webpack --mode none",
