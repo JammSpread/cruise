@@ -31,6 +31,13 @@
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
+		"commands": [
+			{
+				"command": "cruise.tunnel",
+				"title": "Expose a Specified Port",
+				"icon": "media/add.svg"
+			}
+		],
 		"viewsContainers": {
 			"activitybar": [
 				{
