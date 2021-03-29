@@ -36,6 +36,11 @@
 				"command": "cruise.tunnel",
 				"title": "Expose a Specified Port",
 				"icon": "media/add.svg"
+			},
+			{
+				"command": "cruise.close",
+				"title": "Closes a Port",
+				"icon": "media/close.svg"
 			}
 		],
 		"viewsContainers": {
@@ -61,6 +66,13 @@
 					"command": "cruise.tunnel",
 					"when": "view == cruise.ports",
 					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "cruise.close",
+					"when": "view == cruise.ports && viewItem == PortsTreeItem",
+					"group": "inline"
 				}
 			]
 		}

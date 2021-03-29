@@ -1,7 +1,8 @@
 import * as vscode from "vscode"
 
 export default class PortsTreeItem extends vscode.TreeItem {
-	constructor(port: number) {
+	public readonly contextValue = "PortsTreeItem"
+	constructor(public readonly port: number) {
 		super(port.toString(), vscode.TreeItemCollapsibleState.None)
 	}
 }

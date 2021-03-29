@@ -12,6 +12,10 @@ export default class PortsTreeDataProvider
 		this.children.add(new PortsTreeItem(port))
 		PortsTreeDataProvider.refresh()
 	}
+	close(portTreeItem: PortsTreeItem) {
+		this.children.delete(portTreeItem)
+		PortsTreeDataProvider.refresh()
+	}
 	getTreeItem(
 		element: PortsTreeItem,
 	): vscode.TreeItem | Thenable<vscode.TreeItem> {

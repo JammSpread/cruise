@@ -1,5 +1,6 @@
 import * as vscode from "vscode"
 import PortsTreeDataProvider from "./treeDataProvider"
+import PortsTreeItem from "./treeItem"
 import Util from "./util"
 
 function register() {
@@ -17,6 +18,12 @@ function register() {
 		})
 		port && PortsTreeDataProvider.provider.add(parseInt(port))
 	})
+	vscode.commands.registerCommand(
+		"cruise.close",
+		(portsTreeItem: PortsTreeItem) => {
+			PortsTreeDataProvider.provider.close(portsTreeItem)
+		},
+	)
 }
 
 export function activate(context: vscode.ExtensionContext) {
