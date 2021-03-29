@@ -54,6 +54,15 @@
 					"name": "Ports"
 				}
 			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "cruise.tunnel",
+					"when": "view == cruise.ports",
+					"group": "navigation"
+				}
+			]
 		}
 	},
 	"scripts": {
