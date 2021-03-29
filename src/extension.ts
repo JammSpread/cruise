@@ -1,9 +1,10 @@
 import * as vscode from "vscode"
+import PortsTreeDataProvider from "./treeDataProvider"
 import Util from "./util"
 
 function register() {
-	vscode.commands.registerCommand("cruise.tunnel", () => {
-		vscode.window.showInputBox({
+	vscode.commands.registerCommand("cruise.tunnel", async () => {
+		const port = await vscode.window.showInputBox({
 			ignoreFocusOut: true,
 			placeHolder: "Port",
 			prompt: "Expose a Port",
@@ -14,6 +15,7 @@ function register() {
 					: undefined
 			},
 		})
+		port && PortsTreeDataProvider.provider.add(parseInt(port))
 	})
 }
 
