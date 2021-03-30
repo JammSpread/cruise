@@ -11,12 +11,16 @@ function register() {
 			prompt: "Expose a Port",
 			validateInput: input => {
 				// Hint to the user that the input is invalid if it is not a number.
-				return !Util.isNumber(input)
-					? "Specified port must be a number."
-					: undefined
+				if (!Util.isNumber(input)) {
+					return "Specified port must be a number."
+				}
+				// Ensure that the port is above 0.
+				if (+input <= 0) {
+					return "The port must be above 0."
+				}
 			},
 		})
-		port && (await PortsTreeDataProvider.provider.add(parseInt(port)))
+		port && (await PortsTreeDataProvider.provider.add(+port))
 	})
 
 	vscode.commands.registerCommand(
