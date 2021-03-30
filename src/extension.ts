@@ -16,13 +16,12 @@ function register() {
 					: undefined
 			},
 		})
-		port && PortsTreeDataProvider.provider.add(parseInt(port))
+		port && (await PortsTreeDataProvider.provider.add(parseInt(port)))
 	})
+
 	vscode.commands.registerCommand(
 		"cruise.close",
-		(portsTreeItem: PortsTreeItem) => {
-			PortsTreeDataProvider.provider.close(portsTreeItem)
-		},
+		(portsTreeItem: PortsTreeItem) => portsTreeItem.dispose(),
 	)
 }
 
