@@ -27,7 +27,7 @@
 		"expose"
 	],
 	"activationEvents": [
-		"onStartupFinished"
+		"onView:cruise.ports"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -75,7 +75,14 @@
 					"group": "inline"
 				}
 			]
-		}
+		},
+		"viewsWelcome": [
+			{
+				"view": "cruise.ports",
+				"contents": "No ports exposed.\n[Expose](command:cruise.tunnel)",
+				"when": "portChangable"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn format && webpack --mode production",
